@@ -74,8 +74,30 @@ receitas_leves = [
             "Tempere com sal e pimenta do reino e pode servir"
         ],
         "yield": ["Rende 1 porção"]
+    },
+    {
+        "nome": "Salada Coleslaw",
+        "ingredientes": [
+            "100gr de repolho branco",
+            "100gr de repolho roxo",
+            "50gr de cebola roxa",
+            "100gr de cenoura",
+            "1 colher de sopa de maionese",
+            "1/2 limão",
+            "Sal e pimenta a gosto" ,
+            "1 colher de chá de pimenta Sriracha"
+
+
+        ],
+        "Modo de Preparo": [
+            "Higienizar e secar bem todas os ingredientes",
+            "Ralar finamente o repolho, a cebola e a cenoura",
+            "Misturar bem todos os ingrdientes e servir"
+        ],
+        "yield": ["Rende 1 porção"]
     }
 ]
+
 
 class Receitas(Resource):
     def get(self):
@@ -88,6 +110,7 @@ class Receitas(Resource):
             "message": "Uma nova Receita foi Adicionada!",
             "newValue": new_receitas
         }
+
 
 class Receita(Resource):
     def get(self, indice):
@@ -120,6 +143,7 @@ class Receita(Resource):
             "message": "Receita deletada!",
             "arrayAtual": receitas_leves
         }
+
 
 api.add_resource(Receitas, '/receitas/')
 api.add_resource(Receita, '/receitas/<int:indices>')
